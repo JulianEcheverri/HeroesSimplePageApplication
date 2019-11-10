@@ -1,0 +1,25 @@
+<h1><small>Marvel y DC</small></h1>
+
+<!-- para mostrar contenido, sea desde un data, base de datos, api, se usa un servicio -->
+<!-- primero se uso el html y el ngfor para listar todo el arreglo -->
+<!-- luego se remplazo por un componente especializado para listar n veces tenga el arreglo el fragmento de codigo del componente especialzado -->
+<!-- *ngFor="let heroe of heroes; let i = index" -->
+<!-- necesito mandar informacion desde el componente padre al hijo -->
+<!-- se usa el input y hay que importarlo en el hijo -->
+<!-- el input me dice en el componente que una propiedad va a ser recibida desde afuera -->
+<!-- se le manda la variable al hijo de la siguiente forma -->
+<div class="card-columns">
+    <app-heroecard (heroeSeleccionado)="verHeroe($event)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroecard>
+</div>
+<!-- 
+<div class="card-columns">
+    <div class="card animated fadeIn fast" >
+        <img [src]="heroe.img" class="card-img-top img-fluid" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{heroe.nombre}}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+            <button (click)="verHeroe(i)" class="btn btn-outline-primary btn-block">Ver más</button>
+        </div>
+    </div>
+</div> -->
